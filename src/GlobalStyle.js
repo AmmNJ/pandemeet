@@ -21,6 +21,7 @@ export default createGlobalStyle`
   }
 
   h1 {
-    font-size: 24;
+    font-size: 24px;
+    letter-spacing: -0.05em;
   }
 `
