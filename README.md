@@ -4,7 +4,7 @@ With Corona spreading around the world you might be in the situation where you n
 It will enable the user to note which persons he/she met on which date.
 
 ## Features
-- The user cann add people that he/she met on a specific day
+- The user can add people that he/she met on a specific day
 
 ## Available Scripts
 
