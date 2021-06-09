@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# pandemeet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+With Corona spreading around the world you might be in the situation where you need to tell authorities which people you have met the last 14 days. This little web app should help you exactly with that.
+It will enable the user to note which persons he/she met on which date.
+
+## Features
+- The user cann add people that he/she met on a specific day
 
 ## Available Scripts
 
