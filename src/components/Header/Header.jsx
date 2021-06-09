@@ -15,5 +15,5 @@ const Heading = styled.header`
 
 const HeadingText = styled.h1`
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 15px;
 `
