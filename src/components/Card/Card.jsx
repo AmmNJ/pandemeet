@@ -31,5 +31,4 @@ const Date = styled.span`
   font-size: 12px;
   font-weight: 600;
   color: #696ef6;
-  padding: 3px 0;
 `

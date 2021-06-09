@@ -10,7 +10,7 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
         name="firstName"
         placeholder="John"
         autoComplete="on"
-        maxLength="50"
+        maxLength="20"
       />
       <Input
         label="last name"
@@ -18,7 +18,7 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
         name="lastName"
         placeholder="Doe"
         autoComplete="on"
-        maxLength="50"
+        maxLength="20"
       />
       <Input label="date" type="date" name="date" autoComplete="off" />
       <ButtonGrid>
