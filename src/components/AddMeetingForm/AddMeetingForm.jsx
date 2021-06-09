@@ -5,10 +5,18 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
   return (
     <FormGrid onSubmit={handleSubmit}>
       <Input
-        label="name"
+        label="first name"
         type="text"
-        name="name"
-        placeholder="John Doe"
+        name="firstName"
+        placeholder="John"
+        autoComplete="on"
+        maxLength="50"
+      />
+      <Input
+        label="last name"
+        type="text"
+        name="lastName"
+        placeholder="Doe"
         autoComplete="on"
         maxLength="50"
       />
@@ -23,8 +31,8 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
 
 const FormGrid = styled.form`
   display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 50px;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 40px;
   align-items: end;
 `
 

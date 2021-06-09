@@ -5,7 +5,8 @@ import AddMeetingForm from './AddMeetingForm'
 describe('AddMeetingForm', () => {
   it('renders a form with two inputs and two buttons', () => {
     render(<AddMeetingForm />)
-    expect(screen.getByLabelText('name')).toBeInTheDocument()
+    expect(screen.getByLabelText('first name')).toBeInTheDocument()
+    expect(screen.getByLabelText('last name')).toBeInTheDocument()
     expect(screen.getByLabelText('date')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /cancel/i })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /add/i })).toBeInTheDocument()
@@ -13,7 +14,8 @@ describe('AddMeetingForm', () => {
 
   it('renders two required input elements', () => {
     render(<AddMeetingForm />)
-    expect(screen.getByLabelText('name')).toBeRequired()
+    expect(screen.getByLabelText('first name')).toBeRequired()
+    expect(screen.getByLabelText('last name')).toBeRequired()
     expect(screen.getByLabelText('date')).toBeRequired()
   })
 

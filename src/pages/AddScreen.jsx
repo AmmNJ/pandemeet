@@ -13,8 +13,12 @@ export default function AddScreen({ navigateHome, cards, setCards }) {
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.target
-    const { name, date } = form.elements
-    const card = { name: name.value, date: date.value }
+    const { firstName, lastName, date } = form.elements
+    const card = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      date: date.value,
+    }
     setCards([card, ...cards])
     form.reset()
     navigateHome()

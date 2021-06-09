@@ -11,7 +11,12 @@ export default function HomeScreen({ navigateCreate, cards }) {
         {cards
           .sort((a, b) => a.date < b.date)
           .map((card, id) => (
-            <Card key={id} name={card.name} date={card.date} />
+            <Card
+              key={id}
+              firstName={card.firstName}
+              lastName={card.lastName}
+              date={card.date}
+            />
           ))}
       </CardGrid>
       <CreateButton>

@@ -1,9 +1,11 @@
 import styled from 'styled-components/macro'
 
-export default function Card({ name, date }) {
+export default function Card({ firstName, lastName, date }) {
   return (
     <CardLayout>
-      <Name>{name}</Name>
+      <Name>
+        {firstName} {lastName}
+      </Name>
       <Date>{date}</Date>
     </CardLayout>
   )
