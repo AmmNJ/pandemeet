@@ -2,18 +2,18 @@ import styled from 'styled-components/macro'
 
 export default function Header({ text }) {
   return (
-    <Heading>
-      <HeadingText>{text}</HeadingText>
-    </Heading>
+    <HeaderLayout>
+      <Heading>{text}</Heading>
+    </HeaderLayout>
   )
 }
 
-const Heading = styled.header`
+const HeaderLayout = styled.header`
   display: grid;
   place-items: center;
 `
 
-const HeadingText = styled.h1`
+const Heading = styled.h1`
   font-weight: 600;
   margin: 0 0 15px;
 `
