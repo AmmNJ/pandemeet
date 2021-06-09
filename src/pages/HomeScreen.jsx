@@ -13,7 +13,6 @@ export default function HomeScreen({ navigateCreate, cards }) {
           .map((card, id) => (
             <Card key={id} name={card.name} date={card.date} />
           ))}
-        {console.log(cards)}
       </CardGrid>
       <CreateButton>
         <PlusIcon onClick={navigateCreate} role="button" name="createButton" />

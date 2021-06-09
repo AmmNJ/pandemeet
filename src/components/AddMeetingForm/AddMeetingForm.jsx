@@ -16,8 +16,7 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
         label="date"
         type="date"
         name="date"
-        placeholder="John Doe"
-        autoComplete="on"
+        autoComplete="off"
         maxLength="50"
       />
       <ButtonGrid>
@@ -30,8 +29,9 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
 
 const FormGrid = styled.form`
   display: grid;
-  gap: 10px;
-  grid-template-rows: 1fr 1fr auto;
+  grid-template-rows: auto auto 1fr;
+  gap: 50px;
+  align-items: end;
 `
 
 const ButtonGrid = styled.div`

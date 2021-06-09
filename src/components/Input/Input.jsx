@@ -24,6 +24,7 @@ export default function Input({
           autoComplete={autoComplete}
           onChange={onChange}
           maxLength={maxLength}
+          {...props}
         />
       </InputLabel>
     </InputGrid>

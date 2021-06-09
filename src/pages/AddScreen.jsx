@@ -16,9 +16,7 @@ export default function AddScreen({ navigateHome, cards, setCards }) {
     const { name, date } = form.elements
     const card = { name: name.value, date: date.value }
     setCards([card, ...cards])
-
     form.reset()
-    name.focus()
     navigateHome()
   }
 }
