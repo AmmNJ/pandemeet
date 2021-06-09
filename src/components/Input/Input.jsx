@@ -6,9 +6,7 @@ export default function Input({
   name,
   value,
   placeholder,
-  autoComplete,
   onChange,
-  maxLength,
   ...props
 }) {
   return (
@@ -21,9 +19,7 @@ export default function Input({
           name={name}
           value={value}
           placeholder={placeholder}
-          autoComplete={autoComplete}
           onChange={onChange}
-          maxLength={maxLength}
           {...props}
         />
       </InputLabel>
@@ -44,6 +40,9 @@ const InputElement = styled.input`
   padding: 17px;
   border-radius: 4px;
   background: #eeeeee;
+  input::focus {
+    border-color: #696ef6;
+  }
 `
 
 const InputLabel = styled.label`

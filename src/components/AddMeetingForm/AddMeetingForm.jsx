@@ -12,13 +12,7 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
         autoComplete="on"
         maxLength="50"
       />
-      <Input
-        label="date"
-        type="date"
-        name="date"
-        autoComplete="off"
-        maxLength="50"
-      />
+      <Input label="date" type="date" name="date" autoComplete="off" />
       <ButtonGrid>
         <CancelButton onClick={navigateHome}>cancel</CancelButton>
         <AddMeetingButton>add</AddMeetingButton>

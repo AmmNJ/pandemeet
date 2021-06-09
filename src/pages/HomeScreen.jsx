@@ -15,7 +15,7 @@ export default function HomeScreen({ navigateCreate, cards }) {
           ))}
       </CardGrid>
       <CreateButton>
-        <PlusIcon onClick={navigateCreate} role="button" name="createButton" />
+        <PlusIcon onClick={navigateCreate} role="button" name="addButton" />
       </CreateButton>
     </Grid>
   )

@@ -2,7 +2,7 @@ import { screen, render } from '@testing-library/react'
 import Input from './Input'
 
 describe('Input', () => {
-  it('renders a Input component with label and input field', () => {
+  it('renders a Input component with label and input element', () => {
     const callback = jest.fn()
 
     render(
