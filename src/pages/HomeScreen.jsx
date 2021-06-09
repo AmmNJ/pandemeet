@@ -2,6 +2,7 @@ import styled from 'styled-components/macro'
 import Header from '../components/Header/Header'
 import Card from '../components/Card/Card'
 import { ReactComponent as PlusIcon } from '../assets/Create.svg'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function HomeScreen({ navigateCreate, cards }) {
   return (
@@ -10,9 +11,9 @@ export default function HomeScreen({ navigateCreate, cards }) {
       <CardGrid>
         {cards
           .sort((a, b) => a.date < b.date)
-          .map((card, id) => (
+          .map(card => (
             <Card
-              key={id}
+              key={uuidv4()}
               firstName={card.firstName}
               lastName={card.lastName}
               date={card.date}
