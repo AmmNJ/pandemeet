@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
-import Card from '../components/Card/Card'
 import Header from '../components/Header/Header'
+import Card from '../components/Card/Card'
+import { ReactComponent as PlusIcon } from '../assets/Create.svg'
 
 export default function HomeScreen({ navigateCreate }) {
   return (
@@ -22,7 +23,9 @@ export default function HomeScreen({ navigateCreate }) {
         <Card name="John Doe" date="24.10.2020" />
         <Card name="John Doe" date="24.10.2020" />
       </CardGrid>
-      <button onClick={navigateCreate}>navigate create</button>
+      <CreateButton>
+        <PlusIcon onClick={navigateCreate} role="button" name="createButton" />
+      </CreateButton>
     </Grid>
   )
 }
@@ -34,7 +37,7 @@ const Grid = styled.main`
   top: 0;
   width: 100%;
   height: 100%;
-  padding: 34px;
+  padding: 34px 34px 0;
 `
 
 const CardGrid = styled.section`
@@ -42,4 +45,10 @@ const CardGrid = styled.section`
   display: grid;
   gap: 20px;
   overflow-y: scroll;
+`
+
+const CreateButton = styled.div`
+  display: grid;
+  place-items: center;
+  padding: 15px;
 `
