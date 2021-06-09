@@ -8,20 +8,22 @@ export default function Input({
   placeholder,
   autoComplete,
   onChange,
+  maxLength,
   ...props
 }) {
   return (
     <InputGrid>
       <InputLabel>
         <InputLabelText>{label}</InputLabelText>
-        <InputField
+        <InputElement
+          required
           type={type}
           name={name}
           value={value}
           placeholder={placeholder}
           autoComplete={autoComplete}
           onChange={onChange}
-          {...props}
+          maxLength={maxLength}
         />
       </InputLabel>
     </InputGrid>
@@ -30,14 +32,15 @@ export default function Input({
 
 const InputGrid = styled.div`
   display: grid;
-  place-items: center;
+  place-items: left;
   gap: 20px;
 `
 
-const InputField = styled.input`
+const InputElement = styled.input`
   font-size: 14px;
+  width: 100%;
   border: none;
-  padding: 4px;
+  padding: 17px;
   border-radius: 4px;
   background: #eeeeee;
 `
@@ -46,5 +49,7 @@ const InputLabel = styled.label`
   font-size: 18px;
 `
 const InputLabelText = styled.div`
+  font-size: 18px;
+  font-weight: 600;
   text-align: left;
 `

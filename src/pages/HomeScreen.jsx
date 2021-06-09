@@ -3,25 +3,17 @@ import Header from '../components/Header/Header'
 import Card from '../components/Card/Card'
 import { ReactComponent as PlusIcon } from '../assets/Create.svg'
 
-export default function HomeScreen({ navigateCreate }) {
+export default function HomeScreen({ navigateCreate, cards }) {
   return (
     <Grid>
       <Header text="pandemeet" />
       <CardGrid>
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
-        <Card name="John Doe" date="24.10.2020" />
+        {cards
+          .sort((a, b) => a.date < b.date)
+          .map((card, id) => (
+            <Card key={id} name={card.name} date={card.date} />
+          ))}
+        {console.log(cards)}
       </CardGrid>
       <CreateButton>
         <PlusIcon onClick={navigateCreate} role="button" name="createButton" />
@@ -32,6 +24,7 @@ export default function HomeScreen({ navigateCreate }) {
 
 const Grid = styled.main`
   display: grid;
+  grid-template-rows: auto 1fr auto;
   position: fixed;
   left: 0;
   top: 0;
@@ -43,6 +36,7 @@ const Grid = styled.main`
 const CardGrid = styled.section`
   padding: 10px 0;
   display: grid;
+  align-content: start;
   gap: 20px;
   overflow-y: scroll;
 `
