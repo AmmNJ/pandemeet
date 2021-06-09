@@ -16,7 +16,7 @@ const CardLayout = styled.div`
   background-color: #eef0ff;
   align-items: center;
   justify-content: left;
-  border-radius: 7px;
+  border-radius: 4px;
 `
 
 const Name = styled.span`
