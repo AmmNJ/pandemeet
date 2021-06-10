@@ -17,7 +17,7 @@ export default function HomeScreen({ navigateAdd, cards }) {
       card.fullName.toLowerCase().includes(searchValue.toLowerCase())
     )
     setSearchResults(filteredCards)
-    if (searchValue) setTypeaheadResults(filteredCards)
+    if (searchValue.length > 1) setTypeaheadResults(filteredCards)
   }, [cards, searchValue, setSearchValue])
 
   function onSearchChange(e) {
@@ -35,19 +35,9 @@ export default function HomeScreen({ navigateAdd, cards }) {
   return (
     <Grid>
       <Header text="pandemeet" />
-      <SearchBar searchValue={searchValue} onSearchChange={onSearchChange} />
-      <CardGrid>
-        {searchResults
-          .sort((a, b) => a.date < b.date)
-          .map(card => (
-            <Card
-              key={uuidv4()}
-              fullName={card.fullName}
-              date={card.date}
-              address={card.address}
-            />
-          ))}
-        <ul>
+      <SearchContainer>
+        <SearchBar searchValue={searchValue} onSearchChange={onSearchChange} />
+        <TypeaheadList>
           {!isResultSelected &&
             typeaheadResults.length > 0 &&
             typeaheadResults.map(result => (
@@ -59,7 +49,19 @@ export default function HomeScreen({ navigateAdd, cards }) {
                 {result.fullName}
               </li>
             ))}
-        </ul>
+        </TypeaheadList>
+      </SearchContainer>
+      <CardGrid>
+        {searchResults
+          .sort((a, b) => a.date < b.date)
+          .map(card => (
+            <Card
+              key={uuidv4()}
+              fullName={card.fullName}
+              date={card.date}
+              address={card.address}
+            />
+          ))}
       </CardGrid>
       <CreateButton>
         <PlusIcon onClick={navigateAdd} role="button" name="addButton" />
@@ -77,6 +79,31 @@ const Grid = styled.main`
   width: 100%;
   height: 100%;
   padding: 34px 34px 0;
+`
+
+const SearchContainer = styled.div`
+  position: relative;
+`
+
+const TypeaheadList = styled.ul`
+  font-size: 14px;
+  color: #696ef6;
+  background-color: #ffffff;
+  box-shadow: 4px 8px 10px #cccccc;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 4px;
+  li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #c7ceff;
+  }
+  li:last-child {
+    border: none;
+  }
 `
 
 const CardGrid = styled.section`

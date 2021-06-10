@@ -39,9 +39,6 @@ const InputElement = styled.input`
   padding: 17px;
   border-radius: 4px;
   background: #eeeeee;
-  input::focus {
-    border-color: #696ef6;
-  }
 `
 
 const InputLabel = styled.label`
