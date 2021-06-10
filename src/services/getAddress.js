@@ -5,7 +5,7 @@ export default function getAddress(setAddress, latitude, longitude) {
     .then(res => res.json())
     .then(data => {
       const address = data.address
-      const dataAddress =
+      const concatAddress =
         address.road +
         ' ' +
         address.house_number +
@@ -15,7 +15,7 @@ export default function getAddress(setAddress, latitude, longitude) {
         address.state +
         ', ' +
         address.country
-      setAddress(dataAddress)
+      setAddress(concatAddress)
     })
     .catch(error => {
       throw error
