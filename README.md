@@ -12,6 +12,7 @@ It will enable the user to note which persons he/she met on which date.
 ## Preview
 
 The app is deployed with Vercel. You can access it through this link: https://pandemeet-inky.vercel.app/
+It is optimized for mobile devices.
 
 ## Geolocation Permission
 
