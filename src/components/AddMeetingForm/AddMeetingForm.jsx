@@ -1,7 +1,15 @@
 import styled from 'styled-components/macro'
 import Input from '../Input/Input'
+import { ReactComponent as CurrentLocationIcon } from '../../assets/CurrentLocation.svg'
 
-export default function AddMeetingForm({ navigateHome, handleSubmit }) {
+export default function AddMeetingForm({
+  navigateHome,
+  handleSubmit,
+  getLocation,
+  locationStatus,
+  addressValue,
+  onAddressChange,
+}) {
   return (
     <FormGrid onSubmit={handleSubmit}>
       <Input
@@ -10,7 +18,7 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
         name="firstName"
         placeholder="John"
         autoComplete="on"
-        maxLength="20"
+        maxLength="14"
       />
       <Input
         label="last name"
@@ -18,9 +26,26 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
         name="lastName"
         placeholder="Doe"
         autoComplete="on"
-        maxLength="20"
+        maxLength="14"
       />
       <Input label="date" type="date" name="date" autoComplete="off" />
+      <LocationInputGrid>
+        <Input
+          label="address"
+          type="text"
+          name="address"
+          value={addressValue}
+          onChange={onAddressChange}
+          placeholder="Reeperbahn 1, 20359 Hamburg, Deutschland"
+          autoComplete="on"
+        />
+        <CurrentLocationIcon onClick={getLocation} />
+        <LocationStatus>{locationStatus}</LocationStatus>
+      </LocationInputGrid>
+      <LicenseText>
+        © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright
+      </LicenseText>
+
       <ButtonGrid>
         <CancelButton onClick={navigateHome}>cancel</CancelButton>
         <AddMeetingButton>add</AddMeetingButton>
@@ -31,9 +56,23 @@ export default function AddMeetingForm({ navigateHome, handleSubmit }) {
 
 const FormGrid = styled.form`
   display: grid;
-  grid-template-rows: auto auto auto 1fr;
-  gap: 40px;
+  grid-template-rows: auto auto auto auto 1fr;
+  gap: 20px;
   align-items: end;
+`
+
+const LocationInputGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5px;
+  align-items: end;
+`
+const LocationStatus = styled.span`
+  font-size: 10px;
+`
+
+const LicenseText = styled.span`
+  font-size: 10px;
 `
 
 const ButtonGrid = styled.div`

@@ -1,29 +1,37 @@
 import styled from 'styled-components/macro'
 
-export default function Card({ firstName, lastName, date }) {
+export default function Card({ firstName, lastName, date, address }) {
   return (
     <CardLayout>
-      <Name>
-        {firstName} {lastName}
-      </Name>
-      <Date>{date}</Date>
+      <UpperLayout>
+        <Name>
+          {firstName} {lastName}
+        </Name>
+        <Date>{date}</Date>
+      </UpperLayout>
+      <Address>{address}</Address>
     </CardLayout>
   )
 }
 
 const CardLayout = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr 1fr;
+  justify-content: stretch;
   padding: 10px 20px;
   background-color: #eef0ff;
   align-items: center;
-  justify-content: left;
   border-radius: 4px;
-  height: 80px;
+  height: 100px;
+`
+
+const UpperLayout = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
 `
 
 const Name = styled.span`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
 `
 
@@ -31,4 +39,8 @@ const Date = styled.span`
   font-size: 12px;
   font-weight: 600;
   color: #696ef6;
+`
+
+const Address = styled.span`
+  font-size: 12px;
 `

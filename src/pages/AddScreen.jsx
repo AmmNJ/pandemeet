@@ -1,27 +1,65 @@
+import { useState } from 'react'
 import styled from 'styled-components/macro'
 import AddMeetingForm from '../components/AddMeetingForm/AddMeetingForm'
 import Header from '../components/Header/Header'
+import getAddress from '../services/getAddress'
 
 export default function AddScreen({ navigateHome, cards, setCards }) {
+  const [locationStatus, setLocationStatus] = useState('')
+  const [addressValue, setAddressValue] = useState('')
+
   return (
     <Grid>
       <Header text="add meeting" />
-      <AddMeetingForm navigateHome={navigateHome} handleSubmit={handleSubmit} />
+      <AddMeetingForm
+        navigateHome={navigateHome}
+        handleSubmit={handleSubmit}
+        getLocation={getLocation}
+        locationStatus={locationStatus}
+        addressValue={addressValue}
+        onAddressChange={onAddressChange}
+      />
     </Grid>
   )
+
+  function onAddressChange(event) {
+    setAddressValue(event.target.value)
+  }
 
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.target
-    const { firstName, lastName, date } = form.elements
+    const { firstName, lastName, date, address } = form.elements
     const card = {
       firstName: firstName.value,
       lastName: lastName.value,
       date: date.value,
+      address: address.value,
     }
     setCards([card, ...cards])
     form.reset()
     navigateHome()
+  }
+
+  function getLocation() {
+    if (!navigator.geolocation) {
+      setLocationStatus('Geolocation is not supported by your browser')
+    } else {
+      setLocationStatus('Locating...')
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          setLocationStatus(null)
+          getAddress(
+            setAddressValue,
+            position.coords.latitude,
+            position.coords.longitude
+          )
+        },
+        () => {
+          setLocationStatus('Unable to retrieve your location')
+        }
+      )
+    }
   }
 }
 
