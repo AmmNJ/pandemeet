@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid'
 export default function HomeScreen({ navigateAdd, cards }) {
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState([])
+
   useEffect(() => {
     const filteredCards = cards.filter(card =>
       card.fullName.toLowerCase().includes(searchValue)
