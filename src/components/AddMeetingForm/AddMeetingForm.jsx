@@ -30,7 +30,7 @@ export default function AddMeetingForm({
         maxLength="14"
         required
       />
-      <Input label="date" type="date" name="date" autoComplete="off" />
+      <Input label="date" type="date" name="date" autoComplete="off" required />
       <LocationInputGrid>
         <Input
           label="address"
