@@ -23,7 +23,7 @@ yarn
 yarn start
 
 # Testing
-yarn test # launches test runner in interactive watch mode.
+yarn test # launches test runner in interactive watch mode
 ```
 
 The dev environment runs on [http://localhost:3000](http://localhost:3000).
