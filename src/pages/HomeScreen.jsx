@@ -20,18 +20,6 @@ export default function HomeScreen({ navigateAdd, cards }) {
     if (searchValue.length > 1) setTypeaheadResults(filteredCards)
   }, [cards, searchValue, setSearchValue])
 
-  function onSearchChange(e) {
-    const inputValue = e.target.value
-    setSearchValue(inputValue)
-    setIsResultSelected(false)
-    setTypeaheadResults([])
-  }
-
-  function onResultSelected(selectedResult) {
-    setSearchValue(selectedResult)
-    setIsResultSelected(true)
-  }
-
   return (
     <Grid>
       <Header text="pandemeet" />
@@ -76,6 +64,18 @@ export default function HomeScreen({ navigateAdd, cards }) {
       </CreateButton>
     </Grid>
   )
+
+  function onSearchChange(e) {
+    const inputValue = e.target.value
+    setSearchValue(inputValue)
+    setIsResultSelected(false)
+    setTypeaheadResults([])
+  }
+
+  function onResultSelected(selectedResult) {
+    setSearchValue(selectedResult)
+    setIsResultSelected(true)
+  }
 }
 
 const Grid = styled.main`
