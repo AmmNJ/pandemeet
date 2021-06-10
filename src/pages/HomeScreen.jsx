@@ -4,7 +4,7 @@ import Card from '../components/Card/Card'
 import { ReactComponent as PlusIcon } from '../assets/PlusIcon.svg'
 import { v4 as uuidv4 } from 'uuid'
 
-export default function HomeScreen({ navigateCreate, cards }) {
+export default function HomeScreen({ navigateAdd, cards }) {
   return (
     <Grid>
       <Header text="pandemeet" />
@@ -22,7 +22,7 @@ export default function HomeScreen({ navigateCreate, cards }) {
           ))}
       </CardGrid>
       <CreateButton>
-        <PlusIcon onClick={navigateCreate} role="button" name="addButton" />
+        <PlusIcon onClick={navigateAdd} role="button" name="addButton" />
       </CreateButton>
     </Grid>
   )

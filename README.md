@@ -4,7 +4,9 @@ With Corona spreading around the world you might be in the situation where you n
 It will enable the user to note which persons he/she met on which date.
 
 ## Features
+
 - The user can add people that he/she met on a specific day
+- Using a geolocation API, the user can add the location where he/she met that person
 
 ## Available Scripts
 
@@ -12,7 +14,7 @@ In the project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode.
+Runs the app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `yarn test`
