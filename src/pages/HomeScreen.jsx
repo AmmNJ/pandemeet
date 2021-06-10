@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import Header from '../components/Header/Header'
 import Card from '../components/Card/Card'
-import { ReactComponent as PlusIcon } from '../assets/Create.svg'
+import { ReactComponent as PlusIcon } from '../assets/PlusIcon.svg'
 import { v4 as uuidv4 } from 'uuid'
 
 export default function HomeScreen({ navigateCreate, cards }) {
@@ -17,6 +17,7 @@ export default function HomeScreen({ navigateCreate, cards }) {
               firstName={card.firstName}
               lastName={card.lastName}
               date={card.date}
+              address={card.address}
             />
           ))}
       </CardGrid>
