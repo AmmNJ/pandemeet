@@ -11,9 +11,11 @@ It will enable the user to note which persons he/she met on which date.
 
 ## Additional Info
 
-The geolocation API requires permission to access your location. Either you have to allow the request when using the feature or change your settings in case its rejected default.
+The geolocation API requires permission to access your location. Either you have to allow the request when using the feature or change your settings in case its rejected by default.
 
 ## Getting Started
+
+In this project, the yarn package manager is used. [Here](https://yarnpkg.com/) you can find more information and how to get started with yarn.
 
 ```zsh
 # Install dependencies

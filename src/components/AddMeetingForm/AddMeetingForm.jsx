@@ -43,13 +43,14 @@ export default function AddMeetingForm({
           maxLength="80"
           required
         />
-        <CurrentLocationIcon onClick={getLocation} />
+        <CurrentLocationWrapper>
+          <CurrentLocationIcon onClick={getLocation} />
+        </CurrentLocationWrapper>
         <LocationStatus>{locationStatus}</LocationStatus>
       </LocationInputGrid>
       <LicenseText>
         © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright
       </LicenseText>
-
       <ButtonGrid>
         <CancelButton onClick={navigateHome}>cancel</CancelButton>
         <AddMeetingButton>add</AddMeetingButton>
@@ -71,6 +72,11 @@ const LocationInputGrid = styled.div`
   gap: 5px;
   align-items: end;
 `
+
+const CurrentLocationWrapper = styled.div`
+  padding: 0 0 2px;
+`
+
 const LocationStatus = styled.span`
   font-size: 10px;
 `
