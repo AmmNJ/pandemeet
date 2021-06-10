@@ -1,6 +1,6 @@
 # pandemeet
 
-With covid-19 spreading around the world you might be in the situation where you need to tell authorities which people you have met the last 14 days. This little web app should help you exactly with that.
+With covid-19 spreading around the world, you might be in the situation where you need to tell authorities which people you have met the last 14 days. This little web app should help you exactly with that.
 It will enable the user to note which persons he/she met on which date.
 
 ## Features
