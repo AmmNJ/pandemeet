@@ -37,7 +37,6 @@ export default function AddScreen({ navigateHome, cards, setCards }) {
       address: address.value,
     }
     setCards([card, ...cards])
-    form.reset()
     navigateHome()
   }
 

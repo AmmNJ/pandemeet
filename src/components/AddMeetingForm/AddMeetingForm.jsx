@@ -38,6 +38,7 @@ export default function AddMeetingForm({
           onChange={onAddressChange}
           placeholder="Reeperbahn 1, 20359 Hamburg, Deutschland"
           autoComplete="on"
+          maxLength="80"
         />
         <CurrentLocationIcon onClick={getLocation} />
         <LocationStatus>{locationStatus}</LocationStatus>
