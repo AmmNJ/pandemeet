@@ -1,10 +1,10 @@
 import styled from 'styled-components/macro'
 import Header from '../components/Header/Header'
+import Input from '../components/Input/Input'
 import Card from '../components/Card/Card'
 import { ReactComponent as PlusIcon } from '../assets/PlusIcon.svg'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import Input from '../components/Input/Input'
 
 export default function HomeScreen({ navigateAdd, cards }) {
   const [searchValue, setSearchValue] = useState('')
@@ -29,7 +29,7 @@ export default function HomeScreen({ navigateAdd, cards }) {
           type="text"
           name="search"
           placeholder="Enter the person you are searching for ..."
-          maxLength="30"
+          maxLength="28"
           value={searchValue}
           onChange={onSearchChange}
         />
@@ -59,9 +59,9 @@ export default function HomeScreen({ navigateAdd, cards }) {
             />
           ))}
       </CardGrid>
-      <CreateButton>
+      <AddButton>
         <PlusIcon onClick={navigateAdd} role="button" name="addButton" />
-      </CreateButton>
+      </AddButton>
     </Grid>
   )
 
@@ -122,7 +122,7 @@ const CardGrid = styled.section`
   overflow-y: scroll;
 `
 
-const CreateButton = styled.div`
+const AddButton = styled.div`
   display: grid;
   place-items: center;
   padding: 15px;

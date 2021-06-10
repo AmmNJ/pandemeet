@@ -18,7 +18,7 @@ export default function AddMeetingForm({
         name="firstName"
         placeholder="John"
         autoComplete="on"
-        maxLength="14"
+        maxLength="15"
         required
       />
       <Input
@@ -27,7 +27,7 @@ export default function AddMeetingForm({
         name="lastName"
         placeholder="Doe"
         autoComplete="on"
-        maxLength="14"
+        maxLength="15"
         required
       />
       <Input label="date" type="date" name="date" autoComplete="off" required />
@@ -40,7 +40,7 @@ export default function AddMeetingForm({
           onChange={onAddressChange}
           placeholder="Reeperbahn 1, 20359 Hamburg, Deutschland"
           autoComplete="on"
-          maxLength="100"
+          maxLength="80"
           required
         />
         <CurrentLocationIcon onClick={getLocation} />

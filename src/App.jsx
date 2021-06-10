@@ -1,11 +1,12 @@
-import { useState } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
+import useLocalStorage from './hooks/useLocalStorage'
 import AddScreen from './pages/AddScreen'
 import HomeScreen from './pages/HomeScreen'
 
 function App() {
   const { push } = useHistory()
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useLocalStorage('cards', [])
+
   return (
     <Switch>
       <Route path="/add">
