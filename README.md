@@ -23,14 +23,19 @@ This project is developed using [React](https://reactjs.org/).
 Additionally, the yarn package manager is used. [Here](https://yarnpkg.com/) you can find more information and how to get started with yarn.
 
 ```zsh
+# Clone the project
+$ git clone https://github.com/AmmNJ/pandemeet.git # HTTPS
+$ git clone git@github.com:AmmNJ/pandemeet.git # SSH
+$ cd pandemeet
+
 # Install dependencies
-yarn
+$ yarn
 
 # Run app in development mode
-yarn start
+$ yarn start
 
 # Testing
-yarn test # launches test runner in interactive watch mode
+$ yarn test # launches test runner in interactive watch mode
 ```
 
 The dev environment runs on [http://localhost:3000](http://localhost:3000).
