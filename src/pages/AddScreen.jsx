@@ -22,13 +22,13 @@ export default function AddScreen({ navigateHome, cards, setCards }) {
     </Grid>
   )
 
-  function onAddressChange(event) {
-    setAddressValue(event.target.value)
+  function onAddressChange(e) {
+    setAddressValue(e.target.value)
   }
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    const form = event.target
+  function handleSubmit(e) {
+    e.preventDefault()
+    const form = e.target
     const { firstName, lastName, date, address } = form.elements
     const card = {
       firstName: firstName.value,
