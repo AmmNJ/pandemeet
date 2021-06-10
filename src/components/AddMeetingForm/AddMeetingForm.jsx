@@ -19,6 +19,7 @@ export default function AddMeetingForm({
         placeholder="John"
         autoComplete="on"
         maxLength="14"
+        required
       />
       <Input
         label="last name"
@@ -27,8 +28,9 @@ export default function AddMeetingForm({
         placeholder="Doe"
         autoComplete="on"
         maxLength="14"
+        required
       />
-      <Input label="date" type="date" name="date" autoComplete="off" />
+      <Input label="date" type="date" name="date" autoComplete="off" required />
       <LocationInputGrid>
         <Input
           label="address"
@@ -39,6 +41,7 @@ export default function AddMeetingForm({
           placeholder="Reeperbahn 1, 20359 Hamburg, Deutschland"
           autoComplete="on"
           maxLength="100"
+          required
         />
         <CurrentLocationIcon onClick={getLocation} />
         <LocationStatus>{locationStatus}</LocationStatus>

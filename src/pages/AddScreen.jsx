@@ -33,6 +33,7 @@ export default function AddScreen({ navigateHome, cards, setCards }) {
     const card = {
       firstName: firstName.value,
       lastName: lastName.value,
+      fullName: `${firstName.value} ${lastName.value}`,
       date: date.value,
       address: address.value,
     }

@@ -16,7 +16,7 @@ function App() {
         />
       </Route>
       <Route path="/*">
-        <HomeScreen navigateCreate={navigateCreate} cards={cards} />
+        <HomeScreen navigateAdd={navigateAdd} cards={cards} />
       </Route>
     </Switch>
   )
@@ -25,7 +25,7 @@ function App() {
     push('/')
   }
 
-  function navigateCreate() {
+  function navigateAdd() {
     push('/add')
   }
 }

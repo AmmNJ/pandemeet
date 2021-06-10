@@ -14,7 +14,6 @@ export default function Input({
       <InputLabel>
         <InputLabelText>{label}</InputLabelText>
         <InputElement
-          required
           type={type}
           name={name}
           value={value}
@@ -40,9 +39,6 @@ const InputElement = styled.input`
   padding: 17px;
   border-radius: 4px;
   background: #eeeeee;
-  input::focus {
-    border-color: #696ef6;
-  }
 `
 
 const InputLabel = styled.label`
