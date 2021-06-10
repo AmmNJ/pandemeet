@@ -22,7 +22,7 @@ yarn
 # Run app in development mode
 yarn start
 
-# Lint project
+# Testing
 yarn test # launches test runner in interactive watch mode.
 ```
 
