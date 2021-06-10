@@ -1,10 +1,10 @@
 import styled from 'styled-components/macro'
 import Header from '../components/Header/Header'
 import Card from '../components/Card/Card'
-import SearchBar from '../components/SearchBar/SearchBar'
 import { ReactComponent as PlusIcon } from '../assets/PlusIcon.svg'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import Input from '../components/Input/Input'
 
 export default function HomeScreen({ navigateAdd, cards }) {
   const [searchValue, setSearchValue] = useState('')
@@ -36,7 +36,15 @@ export default function HomeScreen({ navigateAdd, cards }) {
     <Grid>
       <Header text="pandemeet" />
       <SearchContainer>
-        <SearchBar searchValue={searchValue} onSearchChange={onSearchChange} />
+        <Input
+          label="search"
+          type="text"
+          name="search"
+          placeholder="Enter the person you are searching for ..."
+          maxLength="30"
+          value={searchValue}
+          onChange={onSearchChange}
+        />
         <TypeaheadList>
           {!isResultSelected &&
             typeaheadResults.length > 0 &&
