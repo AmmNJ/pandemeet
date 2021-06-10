@@ -7,16 +7,19 @@ It will enable the user to note which persons he/she met on which date.
 
 - The user can add people that he/she met on a specific day
 - Using a geolocation API, the user can add the location where he/she met that person
+- The user can search the entries for a specific person with type ahead
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+```zsh
+# Install dependencies
+yarn
 
-### `yarn start`
+# Run app in development mode
+yarn start
 
-Runs the app in development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Lint project
+yarn test # launches test runner in interactive watch mode.
+```
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.
+The dev environment runs on [http://localhost:3000](http://localhost:3000).
