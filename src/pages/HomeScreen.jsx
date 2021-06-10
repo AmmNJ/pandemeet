@@ -36,7 +36,7 @@ export default function HomeScreen({ navigateAdd, cards }) {
         <TypeaheadList>
           {!isResultSelected &&
             typeaheadResults.length > 0 &&
-            typeaheadResults.map(result => (
+            typeaheadResults.slice(0, 5).map(result => (
               <li
                 key={uuidv4()}
                 onClick={() => onResultSelected(result.fullName)}
