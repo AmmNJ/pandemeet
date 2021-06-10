@@ -1,21 +1,35 @@
 import styled from 'styled-components/macro'
 import Header from '../components/Header/Header'
+import SearchBar from '../components/SearchBar/SearchBar'
 import Card from '../components/Card/Card'
 import { ReactComponent as PlusIcon } from '../assets/PlusIcon.svg'
+import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 export default function HomeScreen({ navigateAdd, cards }) {
+  const [searchValue, setSearchValue] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+  useEffect(() => {
+    const filteredCards = cards.filter(card =>
+      card.fullName.toLowerCase().includes(searchValue)
+    )
+    setSearchResults(filteredCards)
+  }, [cards, searchValue, setSearchValue])
+
+  function onSearchChange(event) {
+    setSearchValue(event.target.value)
+  }
   return (
     <Grid>
       <Header text="pandemeet" />
+      <SearchBar searchValue={searchValue} onSearchChange={onSearchChange} />
       <CardGrid>
-        {cards
+        {searchResults
           .sort((a, b) => a.date < b.date)
           .map(card => (
             <Card
               key={uuidv4()}
-              firstName={card.firstName}
-              lastName={card.lastName}
+              fullName={card.fullName}
               date={card.date}
               address={card.address}
             />
@@ -30,7 +44,7 @@ export default function HomeScreen({ navigateAdd, cards }) {
 
 const Grid = styled.main`
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   position: fixed;
   left: 0;
   top: 0;

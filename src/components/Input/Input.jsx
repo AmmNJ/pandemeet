@@ -14,7 +14,6 @@ export default function Input({
       <InputLabel>
         <InputLabelText>{label}</InputLabelText>
         <InputElement
-          required
           type={type}
           name={name}
           value={value}
