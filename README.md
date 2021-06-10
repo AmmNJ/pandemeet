@@ -9,13 +9,14 @@ It will enable the user to note which persons he/she met on which date.
 - Using a geolocation API, the user can add the location where he/she met that person
 - The user can search the entries for a specific person with type ahead
 
-## Additional Info
+## Geolocation Permission
 
 The geolocation API requires permission to access your location. Either you have to allow the request when using the feature or change your settings in case its rejected by default.
 
 ## Getting Started
 
-In this project, the yarn package manager is used. [Here](https://yarnpkg.com/) you can find more information and how to get started with yarn.
+This project is developed using [React](https://reactjs.org/).
+Additionally, the yarn package manager is used. [Here](https://yarnpkg.com/) you can find more information and how to get started with yarn.
 
 ```zsh
 # Install dependencies
