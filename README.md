@@ -14,9 +14,10 @@ It will enable the user to note which persons he/she met on which date.
 The app is deployed with Vercel. You can access it through this link: https://pandemeet-inky.vercel.app/.
 It is optimized for mobile devices.
 
-## Geolocation Permission
+## Geolocation
 
-The geolocation API requires permission to access your location. Either you have to allow the request when using the feature or change your settings in case its rejected by default.
+The geolocation API requires permission to access your location. Either you have to allow the request when using the feature or change your settings in case it is rejected by default. <br />
+The API used to reverse geocode the address from a latitude and longitude is [Nominatim](https://nominatim.org/). You can find the respective API documentation [here](https://nominatim.org/release-docs/develop/api/Reverse/).
 
 ## Getting Started
 
