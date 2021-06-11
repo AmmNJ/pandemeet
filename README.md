@@ -17,7 +17,7 @@ It is optimized for mobile devices.
 ## Geolocation
 
 The geolocation API requires permission to access your location. Either you have to allow the request when using the feature or change your settings in case it is rejected by default. <br />
-The API used to reverse geocode the address from a latitude and longitude is [Nominatim](https://nominatim.org/). You can find the respective API documentation [here](https://nominatim.org/release-docs/develop/api/Reverse/).
+The API that has been used to reverse geocode the address from a latitude and longitude is [Nominatim](https://nominatim.org/). You can find the respective API documentation [here](https://nominatim.org/release-docs/develop/api/Reverse/).
 
 ## Getting Started
 
