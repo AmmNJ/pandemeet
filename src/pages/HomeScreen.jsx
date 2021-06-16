@@ -42,13 +42,13 @@ export default function HomeScreen({ navigateAdd, cards }) {
         <TypeaheadList>
           {!isResultSelected &&
             typeaheadResults.length > 0 &&
-            typeaheadResults.slice(0, 5).map(fullName => (
+            typeaheadResults.slice(0, 5).map(result => (
               <li
                 key={uuidv4()}
-                onClick={() => onResultSelected(fullName)}
+                onClick={() => onResultSelected(result)}
                 role="button"
               >
-                {fullName}
+                {result}
               </li>
             ))}
         </TypeaheadList>
