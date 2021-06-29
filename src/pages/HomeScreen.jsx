@@ -16,8 +16,14 @@ export default function HomeScreen({ navigateAdd, cards }) {
     const filteredCards = cards.filter(card =>
       card.fullName.toLowerCase().includes(searchValue.toLowerCase())
     )
+
     setSearchResults(filteredCards)
-    if (searchValue.length > 1) setTypeaheadResults(filteredCards)
+
+    if (searchValue.length > 1) {
+      const fullNameArray = filteredCards.map(item => item.fullName)
+      const uniqueFullNameArray = [...new Set(fullNameArray)]
+      setTypeaheadResults(uniqueFullNameArray)
+    }
   }, [cards, searchValue, setSearchValue])
 
   return (
@@ -39,10 +45,10 @@ export default function HomeScreen({ navigateAdd, cards }) {
             typeaheadResults.slice(0, 5).map(result => (
               <li
                 key={uuidv4()}
-                onClick={() => onResultSelected(result.fullName)}
+                onClick={() => onResultSelected(result)}
                 role="button"
               >
-                {result.fullName}
+                {result}
               </li>
             ))}
         </TypeaheadList>
