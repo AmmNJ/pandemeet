@@ -18,6 +18,6 @@ export default function getAddress(setAddress, latitude, longitude) {
       setAddress(concatAddress)
     })
     .catch(error => {
-      throw error
+      console.error(error)
     })
 }
